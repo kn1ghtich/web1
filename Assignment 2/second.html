@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h2>2. Interactive To-Do List</h2>
+        <input type="text" id="newTask" placeholder="Enter new task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="tasks"></ul>
+   
+
+    <br><br>
+    <p><a href="assignments.html">Back.</a></p>
+    <script>
+         function addTask() {
+            var task = document.getElementById("newTask").value;
+            if (task === "") {
+                alert("You must type something");
+                return;
+            }
+            var li = document.createElement("li");
+            li.innerHTML = task + ' <button onclick="markComplete(this)">Complete</button> <button onclick="removeTask(this)">Delete</button>';
+            document.getElementById("tasks").appendChild(li);
+            document.getElementById("newTask").value = "";
+        }
+
+        function markComplete(button) {
+            button.parentElement.classList.toggle("completed");
+        }
+
+        function removeTask(button) {
+            button.parentElement.remove();
+        }
+    </script>
+</body>
+</html>

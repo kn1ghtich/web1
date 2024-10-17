@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <h2>1. Button with Multiple Functions</h2>
+        <button onclick="changeBackgroundColor()">Change Background Color</button>
+        <button onclick="toggleImage()">Toggle Image</button>
+        <button onclick="changeText()">Change Text</button>
+        <div id="imageContainer" style="margin-top: 10px;">
+            <img id="image" src="1016260.jpg" alt="image" style="display: block; height: 100px;">
+        </div>
+        <p id="textToChange">Click the button to change the text.</p>
+
+        <br><br>
+        <p><a href="assignments.html">Back.</a></p>
+        <script>
+            function changeBackgroundColor() {
+            document.body.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        }
+
+        function toggleImage() {
+            var img = document.getElementById("image");
+            img.style.display = img.style.display === "none" ? "block" : "none";
+        }
+
+        function changeText() {
+            document.getElementById("textToChange").innerText = "The text has been changed!";
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p id="text">This is sentence one. This is two? This is three!</p>
+    <script>
+        document.getElementById("text").innerHTML = document.getElementById("text").innerText.replace(/([.!?])\s/g, '$1<br>');
+    </script>
+</body>
+</html>

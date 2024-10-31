@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p id="text">This is a sample paragraph with different word lengths.</p>
+    <script>
+        document.getElementById("text").innerHTML = document.getElementById("text").innerText.split(" ")
+            .map(word => word.length > 7 ? `<span style="background:blue">${word}</span>` : word.length < 3 ? `<b>${word}</b>` : word)
+            .join(" ");
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        // Prompt the user for a sentence
+        let sentence = prompt("Enter a sentence:");
+
+        // Sort letters within each word
+        let sortedSentence = sentence
+            .split(" ")
+            .map(word => word.split("").sort().join(""))  // Sorts letters within each word
+            .join(" ");
+
+        // Display the sorted letters within words
+        document.body.innerHTML = `Sorted letters in words: ${sortedSentence}`;
+    </script>
+</body>
+</html>

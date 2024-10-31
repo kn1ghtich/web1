@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        let words = [prompt("Enter word 1:"), prompt("Enter word 2:"), prompt("Enter word 3:")];
+        let longest = words.reduce((a, b) => a.length > b.length ? a : b);
+        let shortest = words.reduce((a, b) => a.length < b.length ? a : b);
+        document.body.innerHTML = `Longest: ${longest}, Shortest: ${shortest}`;
+    </script>
+</body>
+</html>

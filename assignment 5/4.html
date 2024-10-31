@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        let text = prompt("Enter text:");
+        alert(text.replace(/[a-zA-Z]/g, c => String.fromCharCode(c.charCodeAt(0) + 1)));
+    </script>
+</body>
+</html>

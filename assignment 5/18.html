@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drag and Drop</title>
+    <style>
+        #items div {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+            cursor: grab;
+        }
+        #dropZone {
+            width: 300px;
+            height: 200px;
+            margin: auto;
+            border: 2px dashed #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            flex-wrap: wrap; 
+            padding: 10px;
+            gap: 10px; 
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center">Drag and Drop</h2>
+<div id="items">
+    <div id="item1" draggable="true" ondragstart="drag(event)">Item 1</div>
+    <div id="item2" draggable="true" ondragstart="drag(event)">Item 2</div>
+    <div id="item3" draggable="true" ondragstart="drag(event)">Item 3</div>
+</div>
+
+<div id="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)">Drop Here</div>
+
+<script>
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        const data = event.dataTransfer.getData("text");
+        const item = document.getElementById(data);
+        const dropZone = document.getElementById("dropZone");
+
+        if (dropZone.innerText === "Drop Here") {
+            dropZone.innerText = "";
+        }
+
+        if (!dropZone.contains(item)) {
+            dropZone.appendChild(item);
+        }
+    }
+</script>
+
+</body>
+</html>

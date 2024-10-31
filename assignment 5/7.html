@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p id="text">Is this fun? Yes!</p>
+    <script>
+        document.getElementById("text").innerHTML = document.getElementById("text").innerText.replace(/\?/g, '*').replace(/!/g, '@');
+    </script>
+</body>
+</html>

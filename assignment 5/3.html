@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        let text = prompt("Enter text:");
+        let unique = [...text].find(c => text.indexOf(c) === text.lastIndexOf(c));
+        document.body.innerHTML = `First unique: ${unique || "None"}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sliding Sidebar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: margin-left 0.3s;
+        }
+        #sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            left: -250px;
+            top: 0;
+            background-color: #333;
+            color: white;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+        #sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        #sidebar a:hover {
+            background-color: #575757;
+        }
+        #main-content {
+            margin-left: 0;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="sidebar">
+    <a href="javascript:void(0)" onclick="toggleSidebar()">Close Sidebar</a>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</div>
+
+<div id="main-content">
+    <button onclick="toggleSidebar()">Open Sidebar</button>
+    <h1>Welcome to the Sliding Sidebar</h1>
+    <p>Click the button to open the sidebar.</p>
+</div>
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        if (sidebar.style.left === "0px") {
+            sidebar.style.left = "-250px";
+            mainContent.style.marginLeft = "0";
+        } else {
+            sidebar.style.left = "0px";
+            mainContent.style.marginLeft = "250px";
+        }
+    }
+</script>
+
+</body>
+</html>

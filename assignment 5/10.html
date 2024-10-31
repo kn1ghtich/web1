@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p id="text">An array is a great way to study.</p>
+    <script>
+        document.getElementById("text").innerHTML = document.getElementById("text").innerText.split(" ")
+            .map(word => word.startsWith("a") ? `<i>${word}</i>` : word.endsWith("y") ? `<u>${word}</u>` : word)
+            .join(" ");
+    </script>
+</body>
+</html>

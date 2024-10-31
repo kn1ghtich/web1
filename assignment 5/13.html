@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cone Volume Calculator</title>
+    <style>
+        input[type="number"], input[type="text"] {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Input radius and height to get the volume of a cone.</h3>
+    <form onsubmit="calculateConeVolume(event)">
+        <label for="radius">Radius</label>
+        <input type="number" id="radius" name="radius" step="any" required>
+        <br><br>
+        
+        <label for="height">Height</label>
+        <input type="number" id="height" name="height" step="any" required>
+        <br><br>
+        
+        <label for="volume">Volume</label>
+        <input type="text" id="volume" name="volume" readonly value="0.0000">
+        <br><br>
+        
+        <button type="submit">Calculate</button>
+    </form>
+
+    <script>
+        function calculateConeVolume(event) {
+            event.preventDefault();
+            const radius = parseFloat(document.getElementById("radius").value);
+            const height = parseFloat(document.getElementById("height").value);
+            const volume = (1 / 3) * Math.PI * Math.pow(radius, 2) * height;
+            document.getElementById("volume").value = volume.toFixed(4);
+        }
+    </script>
+</body>
+</html>

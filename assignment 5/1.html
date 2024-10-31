@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        let nums = [prompt("Enter 1st number:"), prompt("Enter 2nd number:"), prompt("Enter 3rd number:")].map(Number);
+        let nearest = nums.reduce((a, b) => Math.abs(100 - a) < Math.abs(100 - b) ? a : b);
+        let farthest = nums.reduce((a, b) => Math.abs(100 - a) > Math.abs(100 - b) ? a : b);
+        document.body.innerHTML = `Nearest to 100: ${nearest}, Farthest: ${farthest}`;
+    </script>
+</body>
+</html>
